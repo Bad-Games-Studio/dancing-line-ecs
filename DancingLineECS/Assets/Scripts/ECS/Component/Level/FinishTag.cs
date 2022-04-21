@@ -1,6 +1,6 @@
 namespace ECS.Component.Level
 {
-    public struct Tag
+    public struct FinishTag
     {
         
     }

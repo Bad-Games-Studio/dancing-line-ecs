@@ -1,3 +1,4 @@
+using System;
 using Leopotam.Ecs;
 using UnityEngine;
 
@@ -13,7 +14,7 @@ namespace ECS.Entity
         public void CreateEntityIn(EcsWorld world)
         {
             var entity = world.NewEntity();
-            entity.Get<Component.Level.Tag>();
+            entity.Get<Component.Level.PlatformTag>();
         }
     }
 }

@@ -13,7 +13,10 @@ namespace Startup
             systems.Add(new ECS.System.Player.InitSystem())
                 .Inject(player);
 
-            systems.Add(new ECS.System.Player.Movement());
+            systems
+                .Add(new ECS.System.Player.Movement())
+                .Add(new ECS.System.Player.DeathCondition())
+                .Add(new ECS.System.Player.LevelFinish());
         }
     }
 }
