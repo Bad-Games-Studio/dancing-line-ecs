@@ -7,7 +7,7 @@ namespace ECS.Entity
 {
     public class Player : MonoBehaviour, IEcsWorldEntity
     {
-        [SerializeField] private MovementSpeed movementSpeed;
+        [SerializeField] private Movement movement;
         
         public void CreateEntityIn(EcsWorld world)
         {
@@ -17,7 +17,7 @@ namespace ECS.Entity
             ref var transformRef = ref entity.Get<TransformRef>();
             transformRef.Transform = transform;
 
-            entity.Get<MovementSpeed>() = movementSpeed;
+            entity.Get<Movement>() = movement;
         }
     }
 }

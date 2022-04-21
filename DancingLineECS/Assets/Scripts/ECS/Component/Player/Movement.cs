@@ -4,8 +4,8 @@ using UnityEngine;
 namespace ECS.Component.Player
 {
     [Serializable]
-    public struct MovementSpeed
+    public struct Movement
     {
-        public float Value;
+        public float speed;
     }
 }

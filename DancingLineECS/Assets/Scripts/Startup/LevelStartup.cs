@@ -12,6 +12,9 @@ namespace Startup
         {
             systems.Add(new ECS.System.Level.InitSystem())
                 .Inject(level);
+
+            systems.Add(new ECS.System.Level.Generation())
+                .Inject(level);
         }
     }
 }
