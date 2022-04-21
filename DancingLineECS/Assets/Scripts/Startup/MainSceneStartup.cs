@@ -1,12 +1,11 @@
+using ECS;
 using Leopotam.Ecs;
 using UnityEngine;
 
-namespace ECS
+namespace Startup
 {
-    public class Startup : MonoBehaviour
+    public class MainSceneStartup : MonoBehaviour
     {
-        [SerializeField] private Entity.Player player;
-        
         private EcsSystems _systems;
         private EcsWorld _world;
     
@@ -14,12 +13,13 @@ namespace ECS
         {
             _world = new EcsWorld();
             _systems = new EcsSystems(_world);
-            
-            _systems.Add(new System.Player.Initialize())
-                .Inject(player);
 
-            _systems.Add(new System.Player.Movement());
-            
+            var subsystems = GetComponentsInChildren<ISystemStartup>();
+            foreach (var subsystem in subsystems)
+            {
+                subsystem.AddSystemsTo(_systems);
+            }
+
             _systems.Init();
         }
 

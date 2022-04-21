@@ -20,7 +20,7 @@ namespace ECS.System.Player
             }
         }
 
-        private void HandleMovement(Transform transform, ref MovementSpeed movementSpeed)
+        private static void HandleMovement(Transform transform, ref MovementSpeed movementSpeed)
         {
             transform.position += Time.deltaTime * movementSpeed.Value * Vector3.up;
         }

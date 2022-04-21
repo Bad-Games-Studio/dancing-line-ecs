@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace ECS.System.Player
 {
-    public class Initialize : IEcsInitSystem
+    public class InitSystem : IEcsInitSystem
     {
         private ECS.Entity.Player _player;
         private EcsWorld _world;

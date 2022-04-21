@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace ECS.Entity
 {
-    public class Player : MonoBehaviour
+    public class Player : MonoBehaviour, IEcsWorldEntity
     {
         [SerializeField] private MovementSpeed movementSpeed;
         
